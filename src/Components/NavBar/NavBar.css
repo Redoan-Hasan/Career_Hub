@@ -1,0 +1,11 @@
+#navLink .active{
+    background: linear-gradient(to right, #7E90FE, #9873FF);
+    -webkit-background-clip: text; 
+    background-clip: text;
+    color: transparent;
+}
+#nav{
+    background-image: url("https://i.postimg.cc/KYbSKL8D/bg2.png");
+    background-position: top right;
+    background-repeat: no-repeat;
+}

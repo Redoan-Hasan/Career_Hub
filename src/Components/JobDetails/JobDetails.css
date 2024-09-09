@@ -1,0 +1,14 @@
+#JobDetails {
+    background-image: url("https://i.postimg.cc/YSxcQ94K/bg1.png");
+    background-position: bottom left;
+    background-repeat: no-repeat;
+}
+#perJob {
+    border-radius: 8px;
+    background: linear-gradient(
+    90deg,
+    rgba(126, 144, 254, 0.1) 0%,
+    rgba(152, 115, 255, 0.1) 100%
+);
+}
+
