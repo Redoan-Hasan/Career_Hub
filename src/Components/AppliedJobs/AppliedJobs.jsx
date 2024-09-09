@@ -9,8 +9,8 @@ const AppliedJobs = () => {
     const jobs = useLoaderData();
     const [appliedJobs,setAppliedJobs]=useState([])
     const [displayJobs,setDisplayJobs]=useState([])
-    console.log(Array.isArray(appliedJobs))
-    console.log(Array.isArray(displayJobs))
+    // console.log(Array.isArray(appliedJobs))
+    // console.log(Array.isArray(displayJobs))
     const handleFilter = filter =>{
         if(filter === 'all'){
             setDisplayJobs(appliedJobs)
@@ -23,12 +23,12 @@ const AppliedJobs = () => {
             const remote = appliedJobs?.filter(remote => remote.remote_or_onsite === "Remote")
             setDisplayJobs(remote)
         }
-        console.log(appliedJobs);
+        // console.log(appliedJobs);
     }
     useEffect(() =>{
         const storedItemId = getStoredApplies();
-        console.log( storedItemId)
-        console.log(jobs)
+        // console.log( storedItemId)
+        // console.log(jobs)
         if(jobs.length > 0){
             // const jobsApplied = jobs.filter(job => storedItemId.includes(job.id))
             const jobsApplied = [];

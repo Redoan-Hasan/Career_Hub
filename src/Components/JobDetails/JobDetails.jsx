@@ -9,11 +9,20 @@ const JobDetails = () => {
     const {id}= useParams();
     const idInt = parseInt(id);
     // const currentJob = jobs?.find(currentJob => currentJob.id === idInt);
-    const currentJob = Array.isArray(jobs) ? jobs.find(currentJob => currentJob.id === idInt) : null;
-
+    const currentJob = Array.isArray(jobs) ? jobs.find((current) => current.id === idInt) : null;
+    console.log(Array.isArray(jobs))
+    console.log(jobs)
+    if (!currentJob) {
+        return (
+            <div className="max-w-screen-xl mx-auto my-32">
+                <h1 className="text-4xl text-center font-bold">Job not found</h1>
+                <p className="text-center">Sorry, we couldn't find the job you're looking for.</p>
+            </div>
+        );
+    }
     // console.log(jobs,id, currentJob)
     // console.log(Array.isArray(jobs))
-const handleApplyNow = () =>{
+    const handleApplyNow = () =>{
     saveApplies(idInt);
 
     // toast('You have applied successfully')

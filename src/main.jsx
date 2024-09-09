@@ -30,7 +30,7 @@ const router = createBrowserRouter([
       {
         path:'/jobs',
         element: <AppliedJobs></AppliedJobs>,
-        loader: () => fetch('../public/jobs.json')
+        loader: () => fetch('/jobs.json')
       },
       {
         path: '/blog',
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
       {
         path: '/jobDetails/:id',
         element: <JobDetails></JobDetails>,
-        loader: () => fetch('../public/jobs.json')
+        loader: () => fetch('/jobs.json')
       }
     ]
   },
