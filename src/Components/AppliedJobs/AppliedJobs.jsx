@@ -9,31 +9,34 @@ const AppliedJobs = () => {
     const jobs = useLoaderData();
     const [appliedJobs,setAppliedJobs]=useState([])
     const [displayJobs,setDisplayJobs]=useState([])
+    console.log(Array.isArray(appliedJobs))
+    console.log(Array.isArray(displayJobs))
     const handleFilter = filter =>{
         if(filter === 'all'){
             setDisplayJobs(appliedJobs)
         }
         else if(filter === 'onsite'){
-            const onsite = appliedJobs.filter(onsite => onsite.remote_or_onsite === "Onsite")
+            const onsite = appliedJobs?.filter(onsite => onsite.remote_or_onsite === "Onsite")
             setDisplayJobs(onsite)
         }
         else if(filter === 'remote'){
-            const remote = appliedJobs.filter(remote => remote.remote_or_onsite === "Remote")
+            const remote = appliedJobs?.filter(remote => remote.remote_or_onsite === "Remote")
             setDisplayJobs(remote)
         }
+        console.log(appliedJobs);
     }
     useEffect(() =>{
         const storedItemId = getStoredApplies();
-        console.log('storedItemId' , storedItemId)
+        console.log( storedItemId)
+        console.log(jobs)
         if(jobs.length > 0){
             // const jobsApplied = jobs.filter(job => storedItemId.includes(job.id))
             const jobsApplied = [];
             for(const id of storedItemId){
-                const job = jobs.find(job => job.id === id)
+                const job = jobs?.find(job => job.id === id)
                 if(job){
                     jobsApplied.push(job)
                 }
-                console.log(storedItemId,jobsApplied)
             }
             setAppliedJobs(jobsApplied)
             setDisplayJobs(jobsApplied)
@@ -45,7 +48,7 @@ const AppliedJobs = () => {
             <div id="statistics" className="">
                 <section id="JobDetails">
                     <div className="max-w-screen-xl mx-auto mb-6">
-                        <h1 className="text-center text-4xl font-extrabold text-[#1A1919] py-32">Applied Jobs: {appliedJobs.length}</h1>
+                        <h1 className="text-center text-4xl font-extrabold text-[#1A1919] py-32">Applied Jobs</h1>
                     </div>
                 </section>
             </div>
