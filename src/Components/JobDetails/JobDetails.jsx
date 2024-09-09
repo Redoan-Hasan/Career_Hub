@@ -8,7 +8,9 @@ const JobDetails = () => {
     const jobs = useLoaderData();
     const {id}= useParams();
     const idInt = parseInt(id);
-    const currentJob = jobs?.find(currentJob => currentJob.id === idInt);
+    // const currentJob = jobs?.find(currentJob => currentJob.id === idInt);
+    const currentJob = Array.isArray(jobs) ? jobs.find(currentJob => currentJob.id === idInt) : null;
+
     // console.log(jobs,id, currentJob)
     // console.log(Array.isArray(jobs))
 const handleApplyNow = () =>{
